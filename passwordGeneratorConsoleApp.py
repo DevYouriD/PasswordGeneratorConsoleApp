@@ -1,6 +1,6 @@
 import random
 
-status = False
+status = True
 lower_case_randomlist =     []
 upper_case_randomlist =     []
 numers_randomlist =         []
@@ -11,7 +11,7 @@ upper_case_letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O
 numbers =            ['1','2','3','4','5','6','7','8','9']
 punctual_marks =     ['!','@','#','$','%','^','&','*','(',')']
 
-while not status:
+while status:
     print("Type either 8, 12, or 16 to choose a password length: ")
     print("To exit press Enter")
     userInput = input()
@@ -36,7 +36,7 @@ while not status:
         print("Your new password = " + password)
         print("")
     #CHOICE OF 12 DIGITS
-    if userInput == '12':
+    elif userInput == '12':
         password = []
         for x in range(0,3):
             y = random.randint(0,25)
@@ -55,7 +55,7 @@ while not status:
         print("Your new password = " + password)
         print("")
     #CHOICE OF 16 DIGITS
-    if userInput == '16':
+    elif userInput == '16':
         password = []
         for x in range(0,4):
             y = random.randint(0,25)
@@ -73,7 +73,9 @@ while not status:
         password = ''.join([str(elem) for elem in password])
         print("Your new password = " + password)
         print("")
-    if userInput == '':
+    #CHOICE OF EXIT
+    elif userInput == '':
         exit()
+    #WRONG INPUT
     else:
         print("Please fill in a valid input.")
