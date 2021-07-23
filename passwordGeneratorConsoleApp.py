@@ -12,14 +12,14 @@ while status:
     print("Choose a password length between 5 and 128: ")
     print("Press Enter to exit ")
     print('')
-    userInput = int(input())
+    userInput = input()
 
-    #FREE CHOICE
-    if userInput:    
-        include_lower_case_letters = input("Do you want to include lower case letters in your password? Y/N ")
-        include_upper_case_letters = input("Do you want to include upper case letters in your password? Y/N ")
-        include_numbers =            input("Do you want to include numbers case letters in your password? Y/N? ")
-        include_punctual_marks =     input("Do you want to include punctual marks in your password? Y/N? ")
+    #CHOICE OF PASSWORD LENGTH
+    if userInput:
+        include_lower_case_letters = input("Do you want to include lower case letters in your password? Y/N \n")
+        include_upper_case_letters = input("Do you want to include upper case letters in your password? Y/N \n")
+        include_numbers =            input("Do you want to include numbers case letters in your password? Y/N? \n")
+        include_punctual_marks =     input("Do you want to include punctual marks in your password? Y/N? \n")
 
         afterChoiceList = []
 
@@ -41,9 +41,12 @@ while status:
 
         random.shuffle(afterChoiceList)
 
+        print(afterChoiceList)
+
         password = []
-        for x in range(0,userInput):
-            password.append(afterChoiceList[x])
+        for x in range(5,int(userInput)):
+            y = random.randint(0,len(afterChoiceList)-1)
+            password.append(afterChoiceList[y])
         random.shuffle(password)
         password = ''.join([str(elem) for elem in password])
         print('')
@@ -58,5 +61,6 @@ while status:
     #     print('Please fill in a number between 5 and 128.\n')
     #WRONG INPUT
     else:
+        print('')
         print('Please fill in a valid input.\n')
 
