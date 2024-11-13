@@ -1,2 +1,2 @@
-# passWordGenerator
-This is a Python console application that will generate a password for you, based on your pre-defined settings.
+# Password Generator Console Application
+A Python console tool that can generate passwords based on input parameters.
